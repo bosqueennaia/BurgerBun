@@ -1,7 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,11 +17,11 @@ Author URL: http://w3layouts.com
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
-          <h1> <a class="navbar-brand" href="index.html">
+          <h1> <a class="navbar-brand" href="index>
               <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index.html">
+  <a class="navbar-brand" href="#index">
       <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
   </a> -->
           <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -38,16 +34,16 @@ Author URL: http://w3layouts.com
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item @@about__active">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="about">About</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="menu.html">Menu</a>
+                      <a class="nav-link" href="menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -56,7 +52,7 @@ Author URL: http://w3layouts.com
                       <div id="search" class="pop-overlay">
                           <div class="popup">
                               <h4 class="mb-3">Search here</h4>
-                              <form action="error.html" method="GET" class="search-box">
+                              <form action="error" method="GET" class="search-box">
                                   <input type="search" placeholder="Enter Keyword" name="search" required="required"
                                       autofocus="">
                                   <button type="submit" class="btn btn-style btn-primary">Search</button>
@@ -404,7 +400,7 @@ Author URL: http://w3layouts.com
       <div class="col-lg-4 footer-grid_section_1its footer-text">
         <!-- logo -->
         <h2>
-          <a class="logo text-wh" href="index.html">
+          <a class="logo text-wh" href="index">
             <img src="burgerbun/assets/images/burger.png" alt="burger logo" width="35px" /> Burger Bun
           </a>
         </h2>

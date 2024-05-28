@@ -21,11 +21,11 @@ Author URL: http://w3layouts.com
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
-          <h1> <a class="navbar-brand" href="index.html">
+          <h1> <a class="navbar-brand" href="index">
               <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index.html">
+  <a class="navbar-brand" href="#index">
       <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
   </a> -->
           <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -38,16 +38,16 @@ Author URL: http://w3layouts.com
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item @@about__active">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="about">About</a>
                   </li>
                   <li class="nav-item @@menu__active">
-                      <a class="nav-link" href="menu.html">Menu</a>
+                      <a class="nav-link" href="menu">Menu</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
                       <div id="search" class="pop-overlay">
                           <div class="popup">
                               <h4 class="mb-3">Search here</h4>
-                              <form action="error.html" method="GET" class="search-box">
+                              <form action="error" method="GET" class="search-box">
                                   <input type="search" placeholder="Enter Keyword" name="search" required="required"
                                       autofocus="">
                                   <button type="submit" class="btn btn-style btn-primary">Search</button>
@@ -105,7 +105,13 @@ Author URL: http://w3layouts.com
                     <div class="col-lg-8">
                         <h3 class="title-big">Get in touch with us</h3>
                         <p class="mb-4 mt-lg-0 mt-2">Your email address will not be published. Required fields are marked *</p>
-                        <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="text-right">
+                        <?php if (!empty($success_message)) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?= $success_message ?>
+                            </div>
+                        <?php endif; ?>
+                        <form action="<?= base_url('contact'); ?>" method="post" class="text-right">
+                            <div id="success-message" style="display: none;">Data formulir berhasil disimpan.</div>
                             <div class="form-grid">
                                 <input type="text" name="w3lName" id="w3lName" placeholder="Name*" required="">
                                 <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="">
@@ -151,7 +157,7 @@ Author URL: http://w3layouts.com
       <div class="col-lg-4 footer-grid_section_1its footer-text">
         <!-- logo -->
         <h2>
-          <a class="logo text-wh" href="index.html">
+          <a class="logo text-wh" href="index">
             <img src="burgerbun/assets/images/burger.png" alt="burger logo" width="35px" /> Burger Bun
           </a>
         </h2>
@@ -389,6 +395,29 @@ Author URL: http://w3layouts.com
 <!--bootstrap-->
 <script src="burgerbun/assets/js/bootstrap.min.js"></script>
 <!-- //bootstrap-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            // Lakukan pengiriman AJAX ke server
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('success-message').style.display = 'block';
+                    form.reset(); // Atur ulang formulir setelah berhasil
+                } else {
+                    console.error('Gagal menyimpan data formulir');
+                }
+            }).catch(error => {
+                console.error('Terjadi kesalahan:', error);
+            });
+        });
+    });
+</script>
 
 </body>
 

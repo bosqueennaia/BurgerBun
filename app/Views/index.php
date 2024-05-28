@@ -1,7 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,23 +5,23 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun - Restaurant Category Responsive Web Template | About : W3layouts</title>
+    <title>Burger Bun</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="burgerbun/assets/css/style-starter.css">
   </head>
   <body>
 <!--header-->
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
-          <h1> <a class="navbar-brand" href="index.html">
-              <img src="assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
+          <h1> <a class="navbar-brand" href="index">
+              <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index.html">
+  <a class="navbar-brand" href="#index">
       <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
   </a> -->
           <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -37,17 +33,17 @@ Author URL: http://w3layouts.com
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item @@home__active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item @@about__active">
+                      <a class="nav-link" href="about">About</a>
                   </li>
                   <li class="nav-item @@menu__active">
-                      <a class="nav-link" href="menu.html">Menu</a>
+                      <a class="nav-link" href="menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -56,7 +52,7 @@ Author URL: http://w3layouts.com
                       <div id="search" class="pop-overlay">
                           <div class="popup">
                               <h4 class="mb-3">Search here</h4>
-                              <form action="error.html" method="GET" class="search-box">
+                              <form action="error" method="GET" class="search-box">
                                   <input type="search" placeholder="Enter Keyword" name="search" required="required"
                                       autofocus="">
                                   <button type="submit" class="btn btn-style btn-primary">Search</button>
@@ -89,74 +85,315 @@ Author URL: http://w3layouts.com
   </div>
 </header>
 <!--/header-->
-<section class="w3l-about-breadcrumb">
-    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
-        <div class="container py-lg-5 py-md-3">
-            <h2 class="title">About Us</h2>
+<!-- banner section -->
+<section id="home" class="w3l-banner py-5">
+    <div class="container py-lg-5 py-md-4 mt-lg-0 mt-md-5 mt-4">
+        <div class="row align-items-center py-lg-5 py-4 mt-4">
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="">Delight your Best. </h3>
+                <h2 class="mb-4">Steak Burger</h2>
+                <p>Enjoy delicious burgers and our selection of menu items. For questions or messages, contact us via the contact page. Enjoy!</p>
+                <div class="mt-md-5 mt-4">
+                    <a class="btn btn-primary btn-style mr-2" href="menu"> See Menu </a>
+                    <a class="btn btn-outline-primary btn-style" href="#call"> Book a table </a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+            </div>
         </div>
     </div>
 </section>
-<section class="w3l-aboutblock1" id="about">
+<!-- //banner section -->
+<section class="w3l-index3" id="work">
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
                 <div class="col-lg-6 left-wthree-img text-righ">
                     <div class="position-relative">
-                        <img src="assets/images/about1.jpg" alt="" class="img-fluid radius-image-full">
+                        <img src="burgerbun/assets/images/about.jpg" alt="" class="img-fluid radius-image-full">
+                        <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
+                            <span class="video-play-icon">
+                                <span class="fa fa-play"></span>
+                            </span>
+                        </a>
+                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                            <iframe src="https://www.youtube.com/embed/dCVEY88Fn1k" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4 about-right-faq align-self">
-                    <h5 class="title-small mb-1">Our Resturant</h5>
-                    <h3 class="title-big">Hello and Welcome to our restaurant! Right Ingredients for the Right Food</h3>
-                    <p class="mt-4">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Non quae, fugiat consequatur voluptatem ad.</p>
-                    <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-4" href="about.html"> Read More </a>
-
-                    <a href="#small-dialog1" class="popup-with-zoom-anim play-view text-center position-absolute mt-md-5 mt-4">
-                        <span class="video-play-icon">
-                            <span class="fa fa-play"></span> 
-                        </span>
-                        See Our Story
-                    </a>
-                    <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                    <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-                        <iframe src="https://www.youtube.com/embed/dCVEY88Fn1k" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
+                    <h5 class="title-small mb-1">Our story</h5>
+                    <h3 class="title-big">Burgers! You won't Find Anywhere Else with Best Quality <span>Ingredients</span></h3>
+                    <p class="mt-sm-4 mt-3">Discover the magic behind our mouthwatering burgers on our YouTube channel. Watch how we craft each delicious bite with passion and top-notch ingredients. Join us on this flavorful journey!</p>
+                    <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-2" href="about"> Read More </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- /bottom-grids-->
+<section class="w3l-bottom-grids-6 py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box">
+                    <img src="burgerbun/assets/images/burger.png" alt="burger logo" width="35px">
+                    <h4><a href="#feature" class="title-head">Burgers</a></h4>
+                    <p class="mb-3">Juicy, Flavorful, Fresh.</p>
+                    <a href="menu" class="btn btn-text">View all </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box">
+                    <img src="burgerbun/assets/images/snack.png" alt="burger logo" width="35px">
+                    <h4><a href="#feature" class="title-head">Snacks</a></h4>
+                    <p class="mb-3">Crispy, Savory, Tasty.</p>
+                    <a href="menu" class="btn btn-text">View all </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box">
+                    <img src="burgerbun/assets/images/beverage.png" alt="burger logo" width="35px">
+                    <h4><a href="#feature" class="title-head">Beverages</a></h4>
+                    <p class="mb-3">Refreshing, Chilled, Delightful.</p>
+                    <a href="menu" class="btn btn-text">View all </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //bottom-grids-->
+
+<!-- /mobile section --->
+<section class="w3l-mobile-content-6 py-5">
+    <div class="mobile-info py-lg-5 py-md-4 py-2">
+        <!-- /mobile-info-->
+        <div class="container">
+            <div class="row mobile-info-inn mx-lg-0">
+                <div class="col-lg-4 mobile-right">
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-leaf"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">Natural ingredients</a></h6>
+                            <p>We only use high-quality, natural ingredients to ensure every bite of your burger is healthy and delicious.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-shopping-basket"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url"> Fresh vegetables & Meet</a></h6>
+                            <p>Fresh vegetables and selected meats are the secret to the deliciousness of each of our dishes, providing an unmatched taste.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-users"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">World’s best Chef </a></h6>
+                            <p>Our talented chefs have honed their skills all over the world, bringing exquisite taste to every dish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mobile-left">
+                    <img src="burgerbun/assets/images/burger1.png" class="img-fluid radius-image" alt="">
+                </div>
+                <div class="col-lg-4 mobile-right">
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-cogs"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">Best quality products</a></h6>
+                            <p>We are always committed to presenting the best quality products, from raw materials to presentation.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-motorcycle"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">Fastest door delivery</a></h6>
+                            <p>Enjoy the deliciousness of Burger Bun without waiting long with the fastest delivery service straight to your door.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-thumbs-down"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">Ground beef & Low fat</a></h6>
+                            <p>Our low-fat ground beef provides guilt-free enjoyment, perfect for those of you who care about your health.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //mobile-info-->
+    </div>
+</section>
+<!-- //mobile section --->
+<!-- middle -->
+<div class="middle py-5" id="call">
+    <div class="container py-lg-3">
+        <div class="welcome-left text-center py-md-5 py-3">
+            <h3>The Right Ingredients for the Right Food. Eat Healthy, Delicious and Perfect Burgers From Our Restaurant</h3>
+            <h3 class="mt-4">Call us to order: <a href="tel:+1 123 456 789">+1 123 456 789</a> </h3>
+            <a href="contact" class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2">Contact Us</a>
+            <a href="#book" class="btn btn-style btn-outline-primary mt-sm-5 mt-4">Book a table</a>
+        </div>
+    </div>
+</div>
+<!-- //middle -->
+<!--  Work gallery section -->
+<div class="w3l-gallery2" id="gallery">
+    <div class="burger galleryks py-5">
+      <div class="container py-lg-4 py-md-3">
+        <h6 class="title-small text-center">Food Gallery</h6>
+        <h3 class="title-big mb-lg-5 mb-4 text-center">Our Burger Gallery</h3>
+        <div class="row no-gutters masonry">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g1.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="lion">
+              <img src="burgerbun/assets/images/g1.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g2.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="camel">
+              <img src="burgerbun/assets/images/g2.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g3.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="hippopotamus">
+              <img src="burgerbun/assets/images/g3.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g4.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="koala">
+              <img src="burgerbun/assets/images/g4.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g5.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="bear">
+              <img src="burgerbun/assets/images/g5.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g6.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="rhinoceros">
+              <img src="burgerbun/assets/images/g6.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g7.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="hippopotamus">
+              <img src="burgerbun/assets/images/g7.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="burgerbun/assets/images/g8.jpg" class="js-img-viwer d-block" data-caption="The Right Ingredients for the Right Food."
+              data-id="koala">
+              <img src="burgerbun/assets/images/g8.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
+              <div class="content-overlay"></div>
+              <div class="content-details fadeIn-top">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+                <h4>Delight your Best</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  //Work gallery section -->
+
+
 <!-- features -->
-<section class="w3l-reasons py-5" id="how">
-    <div class="main-w3 py-lg-5 py-md-4">
+<section class="w3l-reasons py-5" id="why">
+    <div class="main-w3 py-lg-5 py-md-d py-2">
         <div class="container">
             <div class="title-content text-center">
-                <h6 class="title-small">Our process</h6>
-                <h3 class="title-big">How We Work</h3>
+                <h6 class="title-small">Why we are the best</h6>
+                <h3 class="title-big">4 Reasons to Choose us</h3>
             </div>
             <div class="row main-cont-wthree-fea mt-5 pt-lg-4 text-center">
                 <div class="col-lg-3 col-sm-6 grids-feature">
-                    <a href="#url" class="icon"><span class="fa fa-pie-chart"></span></a>
-                    <h4><a href="#feature" class="title-head">Food Served Hot</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <a href="#url" class="icon"><span class="fa fa-cutlery"></span></a>
+                    <h4><a href="#feature" class="title-head">Tasty Burgers</a></h4>
+                    <p>Enjoy juicy burgers with fresh ingredients and unforgettable flavors.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-sm-0 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-cogs"></span></a>
-                    <h4><a href="#feature" class="title-head">Ample options</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <h4><a href="#feature" class="title-head">Quality Products</a></h4>
+                    <p>We only use high quality products for each dish.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-lg-0 mt-sm-5 mt-5">
-                    <a href="#url" class="icon"><span class="fa fa-glass"></span></a>
-                    <h4><a href="#feature" class="title-head">In-House Brevery</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <a href="#url" class="icon"><span class="fa fa-users"></span></a>
+                    <h4><a href="#feature" class="title-head">World's best Chef</a></h4>
+                    <p>Our talented chefs bring you exquisite flavors from around the world.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-lg-0 mt-sm-5 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-motorcycle"></span></a>
                     <h4><a href="#feature" class="title-head">Fastest delivery</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <p>Your satisfaction is our priority with the fastest delivery service directly to your door.</p>
                 </div>
             </div>
         </div>
@@ -164,307 +401,35 @@ Author URL: http://w3layouts.com
 </section>
 <!-- //features -->
 
-<!--/team-sec-->
-<section class="w3l-team-main" id="team">
-    <div class="team py-5">
-        <div class="container py-lg-5">
-            <div class="title-content text-center">
-                <h6 class="title-small">Experts and skillful</h6>
-                <h3 class="title-big">Our Experienced Chefs</h3>
-            </div>
-            <div class="row team-row mt-md-5 mt-5">
-                <div class="col-lg-3 col-6 team-wrap">
-                    <div class="team-member text-center">
-                        <div class="team-img">
-                            <img src="assets/images/team1.jpg" alt="" class="radius-image">
-                            <div class="overlay-team">
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#url" class="team-title">Luke jacobs</a>
-                        <p>Experienced Chef</p>
-                    </div>
-                </div>
-                <!-- end team member -->
-
-                <div class="col-lg-3 col-6 team-wrap">
-                    <div class="team-member text-center">
-                        <div class="team-img">
-                            <img src="assets/images/team3.jpg" alt="" class="radius-image">
-                            <div class="overlay-team">
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#url" class="team-title">Claire olson</a>
-                        <p>Experienced Chef</p>
-                    </div>
-                </div>
-                <!-- end team member -->
-
-                <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
-                    <div class="team-member last text-center">
-                        <div class="team-img">
-                            <img src="assets/images/team2.jpg" alt="" class="radius-image">
-                            <div class="overlay-team">
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#url" class="team-title">Phillip hunt</a>
-                        <p>Manager</p>
-                    </div>
-                </div>
-                <!-- end team member -->
-
-                <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
-                    <div class="team-member last text-center">
-                        <div class="team-img">
-                            <img src="assets/images/team4.jpg" alt="" class="radius-image">
-                            <div class="overlay-team">
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#url" class="team-title">Sara grant</a>
-                        <p>Experienced Staff</p>
-                    </div>
-                </div>
-                <!-- end team member -->
-
-            </div>
-        </div>
-</section>
-<!--//team-sec-->
-<!-- stats -->
-<section class="w3_stats py-5" id="stats">
-    <div class="container py-lg-5 py-md-4 py-2">
-        <div class="title-content text-center">
-            <h6 class="title-small">Our facts</h6>
-            <h3 class="title-big">Why we are unique? Have a look.</h3>
-        </div>
-        <div class="w3-stats">
+<!-- app-4 -->
+<section class="w3l-app-launch-4 py-5">
+    <div id="app4-block" class="py-lg-5 py-md-4">
+        <div class="container">
             <div class="row">
-                <div class="col-md-3 col-6">
-                    <div class="counter">
-                        <span class="fa fa-download"></span>
-                        <div class="timer count-title count-number mt-3" data-to="15100" data-speed="1500"></div>
-                        <p class="count-text ">Total Downloads</p>
+                <div class="col-lg-6 app4-left-text">
+                    <h5 class="title-small">Easy way to use mobile app</h5>
+                    <h3 class="title-big">Download our mobile apps today</h3>
+                    <p class="mt-3"> ?? </p>
+                    <div class="download-btns mt-4 pt-lg-3">
+                        <a href="#url"><img src="burgerbun/assets/images/appstore.png" class="radius-image" alt=""></a>
+                        <a href="#url"><img src="burgerbun/assets/images/googleplay.png" class="radius-image" alt=""></a>
+                    </div>
+                    <span class="or"> or </span>
+                    <div class="download-link">
+                        <h5 class="mb-2">Enter your email to get download link</h5>
+                        <form action="#" methos="GET" class="d-flex wrap-align">
+                            <input type="email" placeholder="Enter email" required="required" />
+                            <button type="submit">Get link</button>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="counter">
-                        <span class="fa fa-bicycle"></span>
-                        <div class="timer count-title count-number mt-3" data-to="19256" data-speed="1500"></div>
-                        <p class="count-text ">Orders Served</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="counter">
-                        <span class="fa fa-smile-o"></span>
-                        <div class="timer count-title count-number mt-3" data-to="12100" data-speed="1500"></div>
-                        <p class="count-text ">Happy Customers</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="counter">
-                        <span class="fa fa-users"></span>
-                        <div class="timer count-title count-number mt-3" data-to="2560" data-speed="1500"></div>
-                        <p class="count-text ">Daily Customers</p>
-                    </div>
+                <div class="col-lg-6 app4-right-image mt-lg-0 mt-md-5 mt-4">
+                    <img src="burgerbun/assets/images/mobile.jpg" class="img-fluid radius-image-full" alt="App Device" />
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- //stats -->
-
-
-<!-- testimonials -->
-<section class="w3l-clients-1" id="testimonials">
-    <!-- /grids -->
-    <div class="cusrtomer-layout py-5">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="heading align-self text-center">
-                <h6 class="title-small">What our customers Say</h6>
-                <h3 class="title-big mb-md-5 mb-4">Customer Testimonials</h3>
-            </div>
-            <!-- /grids -->
-            <div class="testimonial-row py-md-4">
-                <div id="owl-demo1" class="owl-two owl-carousel owl-theme mb-md-3 mb-sm-5 mb-4">
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial">
-                                <div class="testi-stars">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star-half"></span>
-                                </div>
-                                <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
-                                </blockquote>
-                                <div class="testi-des">
-                                    <div class="peopl align-self">
-                                        <h3>Dennis wilson</h3>
-                                        <p class="indentity">Customer </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial">
-                                <div class="testi-stars">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star-o"></span>
-                                </div>
-                                <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
-                                </blockquote>
-                                <div class="testi-des">
-                                    <div class="peopl align-self">
-                                        <h3>Tommy sakura</h3>
-                                        <p class="indentity">Customer </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial">
-                                <div class="testi-stars">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
-                                </blockquote>
-                                <div class="testi-des">
-                                    <div class="peopl align-self">
-                                        <h3>Roy Linderson</h3>
-                                        <p class="indentity">Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial">
-                                <div class="testi-stars">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
-                                </blockquote>
-                                <div class="testi-des">
-                                    <div class="peopl align-self">
-                                        <h3>Mike Thyson</h3>
-                                        <p class="indentity">Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /grids -->
-    </div>
-    <!-- //grids -->
-</section>
-<!-- //testimonials -->
-    <!-- forms -->
-    <section class="w3l-forms-9 py-5" id="">
-        <div class="main-w3 py-lg-3">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="main-midd col-lg-8">
-                        <h3 class="title-big">Do You want to Contact with us. Then Don't Hesitate!</h3>
-                    </div>
-                    <div class="main-midd-2 col-lg-4 mt-lg-0 mt-4 text-lg-right">
-                        <a class="btn btn-white btn-style" href="contact.html"> Contact Us </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //forms -->
 <!-- footer -->
 <footer class="py-5">
   <div class="container py-xl-4">
@@ -472,8 +437,8 @@ Author URL: http://w3layouts.com
       <div class="col-lg-4 footer-grid_section_1its footer-text">
         <!-- logo -->
         <h2>
-          <a class="logo text-wh" href="index.html">
-            <img src="assets/images/burger.png" alt="burger logo" width="35px" /> Burger Bun
+          <a class="logo text-wh" href="index">
+            <img src="burgerbun/assets/images/burger.png" alt="burger logo" width="35px" /> Burger Bun
           </a>
         </h2>
         <!-- //logo -->
@@ -523,16 +488,16 @@ Author URL: http://w3layouts.com
         </div>
         <ul class="list-unstyled payment-links mt-4">
           <li>
-            <a href="#payment"><img src="assets/images/pay2.png" class="radius-image" width="55px" alt=""></a>
+            <a href="#payment"><img src="burgerbun/assets/images/pay2.png" class="radius-image" width="55px" alt=""></a>
           </li>
           <li>
-            <a href="#payment"><img src="assets/images/pay5.png" class="radius-image" width="55px" alt=""></a>
+            <a href="#payment"><img src="burgerbun/assets/images/pay5.png" class="radius-image" width="55px" alt=""></a>
           </li>
           <li>
-            <a href="#payment"><img src="assets/images/pay1.png" class="radius-image" width="55px" alt=""></a>
+            <a href="#payment"><img src="burgerbun/assets/images/pay1.png" class="radius-image" width="55px" alt=""></a>
           </li>
           <li>
-            <a href="#payment"><img src="assets/images/pay4.png" class="radius-image" width="55px" alt=""></a>
+            <a href="#payment"><img src="burgerbun/assets/images/pay4.png" class="radius-image" width="55px" alt=""></a>
           </li>
         </ul>
       </div>
@@ -557,7 +522,7 @@ Author URL: http://w3layouts.com
 <!-- //footer -->
 <!-- copyright -->
 <div class="cpy-right text-center py-4">
-  <p>© 2020 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a> </p>
+  <p>© 2024 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> Naia.</a> </p>
 </div>
 <!-- //copyright -->
 
@@ -587,11 +552,11 @@ Author URL: http://w3layouts.com
 </script>
 <!-- /move top -->
 
-<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+<script src="burgerbun/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
 
-<script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+<script src="burgerbun/assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
 
-<script src="assets/js/owl.carousel.js"></script><!-- owl carousel -->
+<script src="burgerbun/assets/js/owl.carousel.js"></script><!-- owl carousel -->
 
 <!-- script for tesimonials carousel slider -->
 <script>
@@ -617,7 +582,7 @@ Author URL: http://w3layouts.com
 </script>
 <!-- //script for tesimonials carousel slider -->
 
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="burgerbun/assets/js/jquery.magnific-popup.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({
@@ -654,10 +619,10 @@ Author URL: http://w3layouts.com
   });
 </script>
 
-<script src="assets/js/counter.js"></script>
+<script src="burgerbun/assets/js/counter.js"></script>
 
 <!-- gallery popup js -->
-<script src="assets/js/smartphoto.js"></script>
+<script src="burgerbun/assets/js/smartphoto.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const sm = new SmartPhoto(".js-img-viwer", {
@@ -708,7 +673,7 @@ Author URL: http://w3layouts.com
 <!-- //disable body scroll which navbar is in active -->
 
 <!--bootstrap-->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="burgerbun/assets/js/bootstrap.min.js"></script>
 <!-- //bootstrap-->
 
 </body>

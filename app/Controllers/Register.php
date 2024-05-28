@@ -1,0 +1,110 @@
+<?php
+
+namespace App\Controllers;
+
+use CodeIgniter\RESTful\ResourceController;
+use App\Models\UserModel; 
+use CodeIgniter\HTTP\ResponseInterface;
+
+class Register extends ResourceController
+{
+    private $userModel;
+    
+    public function __construct() {
+        $this->userModel = new UserModel();
+    }
+
+    /**
+     * Return an array of resource objects, themselves in array format
+     *
+     * @return mixed
+     */
+    public function index()
+    {
+        echo view('auth/register');
+    }
+
+    /**
+     * Return the properties of a resource object
+     *
+     * @return mixed
+     */
+    public function show($id = null)
+    {
+        //
+    }
+
+    /**
+     * Return a new resource object, with default properties
+     *
+     * @return mixed
+     */
+    public function new()
+    {
+        //
+    }
+
+    /**
+     * Create a new resource object, from "posted" parameters
+     *
+     * @return mixed
+     */
+    public function create()
+    {
+        // Mengambil input dari request
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        // Validasi input
+        if (empty($name) || empty($email) || empty($password)) {
+            session()->setFlashdata("errors", "Semua field harus diisi!");
+            return redirect()->to(previous_url())->withInput();
+        }
+
+        if (!is_string($password)) {
+            session()->setFlashdata("errors", "Password harus berupa string.");
+            return redirect()->to(previous_url())->withInput();
+        }
+
+        $payload = [
+            "name" => $name,
+            "email" => $email,
+            "password" => md5($password),
+        ];
+
+        // Menyimpan data ke database
+        $this->userModel->insert($payload);
+        return redirect()->to('/login');
+    }
+
+    /**
+     * Return the editable properties of a resource object
+     *
+     * @return mixed
+     */
+    public function edit($id = null)
+    {
+        //
+    }
+
+    /**
+     * Add or update a model resource, from "posted" properties
+     *
+     * @return mixed
+     */
+    public function update($id = null)
+    {
+        //
+    }
+
+    /**
+     * Delete the designated resource object from the model
+     *
+     * @return mixed
+     */
+    public function delete($id = null)
+    {
+        //
+    }
+}

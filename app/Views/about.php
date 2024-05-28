@@ -1,7 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +5,7 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun - Restaurant Category Responsive Web Template | About : W3layouts</title>
+    <title>Burger Bun</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 
@@ -21,11 +17,11 @@ Author URL: http://w3layouts.com
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
-          <h1> <a class="navbar-brand" href="index.html">
+          <h1> <a class="navbar-brand" href="index">
               <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index.html">
+  <a class="navbar-brand" href="#index">
       <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
   </a> -->
           <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -38,16 +34,16 @@ Author URL: http://w3layouts.com
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="about">About</a>
                   </li>
                   <li class="nav-item @@menu__active">
-                      <a class="nav-link" href="menu.html">Menu</a>
+                      <a class="nav-link" href="menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -56,7 +52,7 @@ Author URL: http://w3layouts.com
                       <div id="search" class="pop-overlay">
                           <div class="popup">
                               <h4 class="mb-3">Search here</h4>
-                              <form action="error.html" method="GET" class="search-box">
+                              <form action="error" method="GET" class="search-box">
                                   <input type="search" placeholder="Enter Keyword" name="search" required="required"
                                       autofocus="">
                                   <button type="submit" class="btn btn-style btn-primary">Search</button>
@@ -108,10 +104,8 @@ Author URL: http://w3layouts.com
                 <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4 about-right-faq align-self">
                     <h5 class="title-small mb-1">Our Resturant</h5>
                     <h3 class="title-big">Hello and Welcome to our restaurant! Right Ingredients for the Right Food</h3>
-                    <p class="mt-4">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Non quae, fugiat consequatur voluptatem ad.</p>
-                    <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-4" href="about.html"> Read More </a>
+                    <p class="mt-4">wtf.</p>
+                    <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-4" href="about"> Read More </a>
 
                     <a href="#small-dialog1" class="popup-with-zoom-anim play-view text-center position-absolute mt-md-5 mt-4">
                         <span class="video-play-icon">
@@ -141,7 +135,7 @@ Author URL: http://w3layouts.com
                 <div class="col-lg-3 col-sm-6 grids-feature">
                     <a href="#url" class="icon"><span class="fa fa-pie-chart"></span></a>
                     <h4><a href="#feature" class="title-head">Food Served Hot</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <p>??.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-sm-0 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-cogs"></span></a>
@@ -458,7 +452,7 @@ Author URL: http://w3layouts.com
                         <h3 class="title-big">Do You want to Contact with us. Then Don't Hesitate!</h3>
                     </div>
                     <div class="main-midd-2 col-lg-4 mt-lg-0 mt-4 text-lg-right">
-                        <a class="btn btn-white btn-style" href="contact.html"> Contact Us </a>
+                        <a class="btn btn-white btn-style" href="contact"> Contact Us </a>
                     </div>
                 </div>
             </div>
@@ -472,7 +466,7 @@ Author URL: http://w3layouts.com
       <div class="col-lg-4 footer-grid_section_1its footer-text">
         <!-- logo -->
         <h2>
-          <a class="logo text-wh" href="index.html">
+          <a class="logo text-wh" href="index">
             <img src="burgerbun/assets/images/burger.png" alt="burger logo" width="35px" /> Burger Bun
           </a>
         </h2>
