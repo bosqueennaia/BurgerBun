@@ -50,4 +50,5 @@ class AuthMiddleware implements FilterInterface
     {
         //
     }
+    
 }

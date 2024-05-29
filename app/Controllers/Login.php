@@ -81,16 +81,9 @@ class Login extends ResourceController
                 return redirect()->to(previous_url())->withInput();
             }
     
-            $user = $this->userModel
-                    ->where('email', $email)
-                    ->first();
+            $user = $this->userModel->where('email', $email)->first();
     
-            if(!$user) {
-                session()->setFlashData("errors", "Email or password is invalid");
-                return redirect()->to(previous_url())->withInput();
-            }
-    
-            if(md5($password) != $user['password']) {
+            if(!$user || md5($password) != $user['password']) {
                 session()->setFlashData("errors", "Email or password is invalid");
                 return redirect()->to(previous_url())->withInput();
             }
@@ -99,7 +92,7 @@ class Login extends ResourceController
             $this->session->set('name', $user['name']);
             $this->session->set('loggedIn', true);
     
-            return redirect()->to('/Views');
+            return redirect()->to('/home');
         } catch(\Exception $e) {
             return redirect()->to(previous_url());
         }
