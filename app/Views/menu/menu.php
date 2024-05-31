@@ -18,7 +18,7 @@
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
           <h1> <a class="navbar-brand" href="index>
-              <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
+          <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
   <a class="navbar-brand" href="#index">
@@ -34,7 +34,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="home">Home</a>
                   </li>
                   <li class="nav-item @@about__active">
                       <a class="nav-link" href="about">About</a>
@@ -485,7 +485,7 @@
 <!-- //footer -->
 <!-- copyright -->
 <div class="cpy-right text-center py-4">
-  <p>© 2020 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a> </p>
+  <p>© 2020 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> Naia.</a> </p>
 </div>
 <!-- //copyright -->
 

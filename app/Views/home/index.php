@@ -8,9 +8,10 @@
     <title>Burger Bun</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="burgerbun/assets/css/style-starter.css">
+    <link rel="stylesheet" href="/burgerbun/assets/css/style-starter.css">
   </head>
   <body>
 <!--header-->
@@ -18,7 +19,7 @@
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
           <h1> <a class="navbar-brand" href="index">
-              <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
+              <img src="/burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   
   <a class="navbar-brand" href="#index">
@@ -34,7 +35,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="home">Home</a>
                   </li>
                   <li class="nav-item @@about__active">
                       <a class="nav-link" href="about">About</a>
@@ -365,6 +366,61 @@
   </div>
   <!--  //Work gallery section -->
 
+<!-- CRUD Section -->
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h5 class="mb-4">Manage Menu</h5>
+
+            <table class="table table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col ">ID</th>
+                        <th scope="col ">Menu</th>
+                        <th scope="col ">Price</th>
+                        <th scope="col ">Category</th>
+                        <th scope="col ">Photo</th>
+                        <th scope="col ">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 0; ?>
+                    <?php foreach ($menus as $item): ?>
+                    <tr>
+                        <td><?= $no += 1; ?></td>
+                        <td><?= $item['menu'] ?></td>
+                        <td>$<?= $item['price'] ?></td>
+                        <td><?= $item['category'] ?></td>
+                        <td><img src="/photos/<?= $item['photo'] ?>" alt="" width=100 height=100></td>
+                        <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                              <a href="/home/<?= $item['id'] ?>/edit" class="btn btn-info">
+                                  <i class="bi bi-pencil"></i> <!-- Bootstrap Icons -->
+                                  <!-- <i class="fas fa-pencil-alt"></i> --> <!-- Font Awesome -->
+                              </a>
+                              <form action="/home/<?= $item['id'] ?>" method="POST" onsubmit="return confirm(`Are you sure?`)">
+                                  <input type="hidden" name="_method" value="DELETE">
+                                  <button class="btn btn-danger" type="submit">
+                                      <i class="bi bi-trash"></i> <!-- Bootstrap Icons -->
+                                      <!-- <i class="fas fa-trash-alt"></i> --> <!-- Font Awesome -->
+                                  </button>
+                              </form>
+                          </div>
+                        </td>
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+
+            <form action="/home/new" method="POST">
+              <button type="submit" class="btn btn-primary">Add Menu</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- End of CRUD Section -->
+
 
 <!-- features -->
 <section class="w3l-reasons py-5" id="why">
@@ -401,35 +457,6 @@
 </section>
 <!-- //features -->
 
-<!-- app-4 -->
-<section class="w3l-app-launch-4 py-5">
-    <div id="app4-block" class="py-lg-5 py-md-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 app4-left-text">
-                    <h5 class="title-small">Easy way to use mobile app</h5>
-                    <h3 class="title-big">Download our mobile apps today</h3>
-                    <p class="mt-3"> ?? </p>
-                    <div class="download-btns mt-4 pt-lg-3">
-                        <a href="#url"><img src="burgerbun/assets/images/appstore.png" class="radius-image" alt=""></a>
-                        <a href="#url"><img src="burgerbun/assets/images/googleplay.png" class="radius-image" alt=""></a>
-                    </div>
-                    <span class="or"> or </span>
-                    <div class="download-link">
-                        <h5 class="mb-2">Enter your email to get download link</h5>
-                        <form action="#" methos="GET" class="d-flex wrap-align">
-                            <input type="email" placeholder="Enter email" required="required" />
-                            <button type="submit">Get link</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 app4-right-image mt-lg-0 mt-md-5 mt-4">
-                    <img src="burgerbun/assets/images/mobile.jpg" class="img-fluid radius-image-full" alt="App Device" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- footer -->
 <footer class="py-5">
   <div class="container py-xl-4">

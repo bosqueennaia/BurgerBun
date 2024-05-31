@@ -8,8 +8,8 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Register extends ResourceController
 {
-    private $userModel;
-    
+		private $userModel;
+		
     public function __construct() {
         $this->userModel = new UserModel();
     }
@@ -51,29 +51,12 @@ class Register extends ResourceController
      */
     public function create()
     {
-        // Mengambil input dari request
-        $name = $this->request->getPost('name');
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-
-        // Validasi input
-        if (empty($name) || empty($email) || empty($password)) {
-            session()->setFlashdata("errors", "Semua field harus diisi!");
-            return redirect()->to(previous_url())->withInput();
-        }
-
-        if (!is_string($password)) {
-            session()->setFlashdata("errors", "Password harus berupa string.");
-            return redirect()->to(previous_url())->withInput();
-        }
-
         $payload = [
-            "name" => $name,
-            "email" => $email,
-            "password" => md5($password),
+            "name" => $this->request->getPost('name'),
+            "email" => $this->request->getPost('email'),
+            "password" => md5($this->request->getPost('password')),
         ];
 
-        // Menyimpan data ke database
         $this->userModel->insert($payload);
         return redirect()->to('/login');
     }

@@ -10902,6 +10902,9 @@ span.or {
     border-right: none;
     border-left: none; } }
 
+table img {
+  border-radius: 5px;}
+  
 @-webkit-keyframes smartphoto {
   from {
     opacity: 0; }

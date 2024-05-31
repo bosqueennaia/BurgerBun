@@ -34,7 +34,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="home">Home</a>
                   </li>
                   <li class="nav-item active">
                       <a class="nav-link" href="about">About</a>
@@ -104,7 +104,7 @@
                 <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4 about-right-faq align-self">
                     <h5 class="title-small mb-1">Our Resturant</h5>
                     <h3 class="title-big">Hello and Welcome to our restaurant! Right Ingredients for the Right Food</h3>
-                    <p class="mt-4">wtf.</p>
+                    <p class="mt-4">Please come to Burger Bun!</p>
                     <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-4" href="about"> Read More </a>
 
                     <a href="#small-dialog1" class="popup-with-zoom-anim play-view text-center position-absolute mt-md-5 mt-4">
@@ -135,22 +135,22 @@
                 <div class="col-lg-3 col-sm-6 grids-feature">
                     <a href="#url" class="icon"><span class="fa fa-pie-chart"></span></a>
                     <h4><a href="#feature" class="title-head">Food Served Hot</a></h4>
-                    <p>??.</p>
+                    <p>Our dishes are always served at the right temperature, preserving their best taste and aroma.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-sm-0 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-cogs"></span></a>
                     <h4><a href="#feature" class="title-head">Ample options</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <p>We provide a variety of menu choices, from classic to innovative dishes, to suit every customer's taste.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-lg-0 mt-sm-5 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-glass"></span></a>
                     <h4><a href="#feature" class="title-head">In-House Brevery</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <p>We produce high quality beer in-house, providing a unique and authentic drinking experience.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 grids-feature mt-lg-0 mt-sm-5 mt-5">
                     <a href="#url" class="icon"><span class="fa fa-motorcycle"></span></a>
                     <h4><a href="#feature" class="title-head">Fastest delivery</a></h4>
-                    <p>Dolor et sed amet eget volutp elit libero. timpus sed elit nibh quis dui, nunc tortor sit amet.</p>
+                    <p>We prioritize speed in order delivery, so you can enjoy our dishes immediately.</p>
                 </div>
             </div>
         </div>
@@ -342,15 +342,11 @@
                                     <span class="fa fa-star-half"></span>
                                 </div>
                                 <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
+                                    <q>I highly recommend Burger Bun for those looking for a high quality burger. Tastes great, portions are huge, and prices are affordable. Will definitely be back!</q>
                                 </blockquote>
                                 <div class="testi-des">
                                     <div class="peopl align-self">
-                                        <h3>Dennis wilson</h3>
+                                        <h3>Naia</h3>
                                         <p class="indentity">Customer </p>
                                     </div>
                                 </div>
@@ -368,15 +364,11 @@
                                     <span class="fa fa-star-o"></span>
                                 </div>
                                 <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
+                                    <q>Burger Bun provides a great dining experience. Their burgers are juicy and full of flavor, while their extensive menu options ensure there is something for everyone.</q>
                                 </blockquote>
                                 <div class="testi-des">
                                     <div class="peopl align-self">
-                                        <h3>Tommy sakura</h3>
+                                        <h3>Iam</h3>
                                         <p class="indentity">Customer </p>
                                     </div>
                                 </div>
@@ -394,15 +386,11 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                                 <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
+                                    <q>Burger Bun Restaurant is a great place to eat burgers. From the taste to the appearance, everything is amazing. Don't miss their signature menu, it's truly appetizing!.</q>
                                 </blockquote>
                                 <div class="testi-des">
                                     <div class="peopl align-self">
-                                        <h3>Roy Linderson</h3>
+                                        <h3>Adinda</h3>
                                         <p class="indentity">Customer</p>
                                     </div>
                                 </div>
@@ -420,15 +408,11 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                                 <blockquote>
-                                    <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                        laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                        facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                        voluptate rem ullam dolore nisi est quasi, doloribus tempora. consectetur
-                                        adipisicing doloribus est elit. Non quae, fugiat consequatur voluptatem ad.</q>
+                                    <q>Burger Bun never disappoints! The burgers are always fresh and delicious, with a variety of menu choices. Friendly service and a pleasant restaurant atmosphere make visiting here always enjoyable.</q>
                                 </blockquote>
                                 <div class="testi-des">
                                     <div class="peopl align-self">
-                                        <h3>Mike Thyson</h3>
+                                        <h3>Lazze</h3>
                                         <p class="indentity">Customer</p>
                                     </div>
                                 </div>
@@ -551,7 +535,7 @@
 <!-- //footer -->
 <!-- copyright -->
 <div class="cpy-right text-center py-4">
-  <p>© 2020 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a> </p>
+  <p>© 2020 Burger Bun. All rights reserved | Design by <a href="http://w3layouts.com"> Naia.</a> </p>
 </div>
 <!-- //copyright -->
 

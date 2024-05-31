@@ -37,11 +37,11 @@
                     <form action="/login" method="post">
                         <div class="input-group">
                             <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <input type="email" placeholder="Email" required name="email">
+                            <input type="email" placeholder="Email" required="">
                         </div>
                         <div class="input-group two-groop">
                             <span><i class="fa fa-key" aria-hidden="true"></i></span>
-                            <input type="Password" placeholder="Password" required name="password">
+                            <input type="Password" placeholder="Password" required="">
                         </div>
                         <div class="form-row bottom">
                             <div class="form-check">

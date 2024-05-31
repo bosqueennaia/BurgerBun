@@ -11,7 +11,8 @@ class Login extends ResourceController
     protected $session;
     private $userModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->userModel = new UserModel();
         $this->session = \Config\Services::session();
     }
@@ -55,23 +56,15 @@ class Login extends ResourceController
     {
         try {
             $validate = $this->validate([
-                'email' => 'required|valid_email',
+                'email' => 'required',
                 'password' => 'required',
-            ], [
-                "email" => [
-                    "required" => "Email harus diisi!",
-                    "valid_email" => "Email tidak valid!"
-                ],
-                "password" => [
-                    "required" => "Anda harus mengisi kata sandi!",
-                ],
             ]);
 
-            if(!$validate) {
+            if (!$validate) {
                 session()->setFlashData("errors", $this->validator->listErrors());
                 return redirect()->to(previous_url())->withInput();
             }
-    
+
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
@@ -80,20 +73,20 @@ class Login extends ResourceController
                 session()->setFlashData("errors", "Invalid password format");
                 return redirect()->to(previous_url())->withInput();
             }
-    
+
             $user = $this->userModel->where('email', $email)->first();
-    
-            if(!$user || md5($password) != $user['password']) {
+
+            if (!$user || md5($password) != $user['password']) {
                 session()->setFlashData("errors", "Email or password is invalid");
                 return redirect()->to(previous_url())->withInput();
             }
-    
+
             $this->session->set('id', $user['id']);
             $this->session->set('name', $user['name']);
             $this->session->set('loggedIn', true);
-    
+
             return redirect()->to('/home');
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->to(previous_url());
         }
     }
