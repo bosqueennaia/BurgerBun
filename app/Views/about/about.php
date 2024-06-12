@@ -17,7 +17,7 @@
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
-          <h1> <a class="navbar-brand" href="index">
+            <h1> <a class="navbar-brand" href="<?= base_url('home'); ?>">
               <img src="burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
           <!-- if logo is image enable this   

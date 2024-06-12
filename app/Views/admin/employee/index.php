@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun</title>
+    <title>Manage Employee</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -22,11 +22,7 @@
               <img src="/burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
 
-          <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index">
-      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-  </a> -->
-          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+              <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
               data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
@@ -36,16 +32,16 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="home">Home</a>
+                      <a class="nav-link" href="/">Home</a>
                   </li>
                   <li class="nav-item @@about__active">
-                      <a class="nav-link" href="about">About</a>
+                      <a class="nav-link" href="/about">About</a>
                   </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="menu">Menu</a>
+                  <li class="nav-item @@menu__active">
+                      <a class="nav-link" href="/menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="contact">Contact</a>
+                      <a class="nav-link" href="/contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -68,7 +64,7 @@
                   <!--//search-right-->
               </ul>
           </div>
-          <!-- toggle switch for light and dark theme -->
+          <!-- toggle pjujur mana -->
           <div class="mobile-position">
               <nav class="navigation">
                   <div class="theme-switch-wrapper">
@@ -90,46 +86,71 @@
 <section class="w3l-about-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
         <div class="container py-lg-5 py-md-3">
-            <h2 class="title">Menu items</h2>
+            <h2 class="title">Employees</h2>
         </div>
     </div>
 </section>
-<div class="w3l-menublock py-5">
+<div class="w3l-menublock py-5">bak
     <!-- menu block -->
-<!-- CRUD Section -->
-<div class="container mt-5">
-    <div class="row mb-4">
-        <div class="col-12">
 
-            <table class="table table-hover ">
-                <thead>
-                    <tr>
-                        <th scope="col ">ID</th>
-                        <th scope="col ">Menu</th>
-                        <th scope="col ">Price</th>
-                        <th scope="col ">Category</th>
-                        <th scope="col ">Photo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no = 0; ?>
-                    <?php foreach ($menus as $item): ?>
-                    <tr>
-                        <td><?= $no += 1; ?></td>
-                        <td><?= $item['menu'] ?></td>
-                        <td>$<?= $item['price'] ?></td>
-                        <td><?= $item['category'] ?></td>
-                        <td><img src="/photos/<?= $item['photo'] ?>" alt="" width=100 height=100></td>
-                    </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
+ <!-- CRUD Section -->
+ <div class="w3l-menublock py-5">
+        <div class="container mt-5">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5 class="mb-4">Manage Employees</h5>
 
+                    <table class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Marital Status</th>
+                                <th scope="col">Work Schedule</th>
+                                <th scope="col">Position</th>
+                                <th scope="col ">Photo</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($employees as $employee): ?>
+                            <tr>
+                                <td><?= $employee['id'] ?></td>
+                                <td><?= $employee['name'] ?></td>
+                                <td><?= $employee['age'] ?></td>
+                                <td><?= $employee['gender'] ?></td>
+                                <td><?= $employee['marital_status'] ?></td>
+                                <td><?= $employee['work_schedule'] ?></td>
+                                <td><?= $employee['position'] ?></td>
+                                <td><img src="/photos/<?= $employee['photo'] ?>" alt="" width="100" height="100"></td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="/admin/employee/edit/<?= $employee['id'] ?>" class="btn btn-info">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <form action="/admin/employee/delete/<?= $employee['id'] ?>" method="POST" onsubmit="return confirm('Are you sure?')">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-danger" type="submit">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+
+                    <form action="/admin/employee/new" method="POST">
+                        <button type="submit" class="btn btn-primary">Add Employee</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- End of CRUD Section -->
+    <!-- End of CRUD Section -->
     <!-- menu block -->
 </div>
 <!-- footer -->

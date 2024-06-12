@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun</title>
+    <title>Manage Menu</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -22,11 +22,7 @@
               <img src="/burgerbun/assets/images/burger.png" alt="burger logo"width="35px" /> Burger Bun
               </a></h1>
 
-          <!-- if logo is image enable this   
-  <a class="navbar-brand" href="#index">
-      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-  </a> -->
-          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+              <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
               data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
@@ -36,16 +32,16 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item @@home__active">
-                      <a class="nav-link" href="home">Home</a>
+                      <a class="nav-link" href="/">Home</a>
                   </li>
                   <li class="nav-item @@about__active">
-                      <a class="nav-link" href="about">About</a>
+                      <a class="nav-link" href="/about">About</a>
                   </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="menu">Menu</a>
+                  <li class="nav-item @@menu__active">
+                      <a class="nav-link" href="/menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="contact">Contact</a>
+                      <a class="nav-link" href="/contact">Contact</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -96,10 +92,12 @@
 </section>
 <div class="w3l-menublock py-5">
     <!-- menu block -->
+
 <!-- CRUD Section -->
 <div class="container mt-5">
     <div class="row mb-4">
         <div class="col-12">
+            <h5 class="mb-4">Manage Menu</h5>
 
             <table class="table table-hover ">
                 <thead>
@@ -109,6 +107,7 @@
                         <th scope="col ">Price</th>
                         <th scope="col ">Category</th>
                         <th scope="col ">Photo</th>
+                        <th scope="col ">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -120,11 +119,29 @@
                         <td>$<?= $item['price'] ?></td>
                         <td><?= $item['category'] ?></td>
                         <td><img src="/photos/<?= $item['photo'] ?>" alt="" width=100 height=100></td>
+                        <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                              <a href="/admin/menu/edit/<?= $item['id'] ?>" class="btn btn-info">
+                                  <i class="bi bi-pencil"></i> <!-- Bootstrap Icons -->
+                                  <!-- <i class="fas fa-pencil-alt"></i> --> <!-- Font Awesome -->
+                              </a>
+                              <form action="/admin/menu/delete/<?= $item['id'] ?>" method="POST" onsubmit="return confirm('Are you sure?')">
+                                  <input type="hidden" name="_method" value="DELETE">
+                                  <button class="btn btn-danger" type="submit">
+                                      <i class="bi bi-trash"></i> <!-- Bootstrap Icons -->
+                                      <!-- <i class="fas fa-trash-alt"></i> --> <!-- Font Awesome -->
+                                  </button>
+                              </form>
+                          </div>
+                        </td>
                     </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
 
+            <form action="/admin/menu/new" method="POST">
+              <button type="submit" class="btn btn-primary">Add Menu</button>
+            </form>
         </div>
     </div>
 </div>

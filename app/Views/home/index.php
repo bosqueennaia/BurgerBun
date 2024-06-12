@@ -366,62 +366,6 @@
   </div>
   <!--  //Work gallery section -->
 
-<!-- CRUD Section -->
-<div class="container mt-5">
-    <div class="row mb-4">
-        <div class="col-12">
-            <h5 class="mb-4">Manage Menu</h5>
-
-            <table class="table table-hover ">
-                <thead>
-                    <tr>
-                        <th scope="col ">ID</th>
-                        <th scope="col ">Menu</th>
-                        <th scope="col ">Price</th>
-                        <th scope="col ">Category</th>
-                        <th scope="col ">Photo</th>
-                        <th scope="col ">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no = 0; ?>
-                    <?php foreach ($menus as $item): ?>
-                    <tr>
-                        <td><?= $no += 1; ?></td>
-                        <td><?= $item['menu'] ?></td>
-                        <td>$<?= $item['price'] ?></td>
-                        <td><?= $item['category'] ?></td>
-                        <td><img src="/photos/<?= $item['photo'] ?>" alt="" width=100 height=100></td>
-                        <td>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                              <a href="/home/<?= $item['id'] ?>/edit" class="btn btn-info">
-                                  <i class="bi bi-pencil"></i> <!-- Bootstrap Icons -->
-                                  <!-- <i class="fas fa-pencil-alt"></i> --> <!-- Font Awesome -->
-                              </a>
-                              <form action="/home/<?= $item['id'] ?>" method="POST" onsubmit="return confirm(`Are you sure?`)">
-                                  <input type="hidden" name="_method" value="DELETE">
-                                  <button class="btn btn-danger" type="submit">
-                                      <i class="bi bi-trash"></i> <!-- Bootstrap Icons -->
-                                      <!-- <i class="fas fa-trash-alt"></i> --> <!-- Font Awesome -->
-                                  </button>
-                              </form>
-                          </div>
-                        </td>
-                    </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
-
-            <form action="/home/new" method="POST">
-              <button type="submit" class="btn btn-primary">Add Menu</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- End of CRUD Section -->
-
-
 <!-- features -->
 <section class="w3l-reasons py-5" id="why">
     <div class="main-w3 py-lg-5 py-md-d py-2">

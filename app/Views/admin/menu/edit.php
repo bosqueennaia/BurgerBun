@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun</title>
+    <title>Manage Menu</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="/burgerbun/assets/css/style-starter.css">
+    
   </head>
   <body>
 <!--header-->
@@ -35,27 +36,43 @@
 <div class="container mt-5">
     <div class="row mb-4">
         <div class="col-12">
-            <h5 class="mb-4">Create new product</h5>
-            <form action="/home" method="post" enctype="multipart/form-data">
+            <h5 class="mb-4">Update menu <?= $data['menu'] ?></h5>
+            <form action="/admin/menu/update/<?= $data['id'] ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="put" />
+
                 <div class="form-group">
                     <label for="example-menu">Menu</label>
                     <input type="text" class="form-control" id="example-menu" aria-describedby="emailHelp" 
-                        placeholder="Enter menu" required name="menu">
+                        placeholder="Enter menu" required name="menu" value="<?= $data['menu'] ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="example-price">Price</label>
-                    <input type="number" min="1" class="form-control" id="example-price" aria-describedby="emailHelp" 
-                        placeholder="Enter price" required name="price">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" min="1" class="form-control" id="example-price" aria-describedby="emailHelp" 
+                            placeholder="Enter price" required name="price" value="<?= $data['price'] ?>">
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="example-category">Category</label>
                     <select class="form-control" name="category" id="example-category">
-                        <option value="Burgers">Burgers</option>
-                        <option value="Hot Snacks">Hot Snacks</option>
-                        <option value="Beverages">Beverages</option>
+                        <option value="Burgers" <?= ($data['category'] == 'Burgers') ? 'selected' : '' ?>>Burgers</option>
+                        <option value="Hot Snacks" <?= ($data['category'] == 'Hot Snacks') ? 'selected' : '' ?>>Hot Snacks</option>
+                        <option value="Beverages" <?= ($data['category'] == 'Beverages') ? 'selected' : '' ?>>Beverages</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="example-photo">Current Photo:</label>
+                    <?php if ($data['photo']) { ?>
+                        <img src="/photos/<?= $data['photo'] ?>" alt="" width=100 height=100>
+                    <?php } else { ?>
+                        <p>No Photo.</p>
+                    <?php } ?>
                 </div>
 
                 <div class="form-group">
@@ -68,7 +85,3 @@
         </div>
     </div>
 </div>
-
-</body>
-
-</html>

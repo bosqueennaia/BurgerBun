@@ -2,12 +2,19 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
 
-class Menu extends Controller
+class Menu extends BaseController
 {
-    public function menu()
+    public function index()
     {
-        return view('menu/menu');
+        // Load the model
+        $menuModel = new \App\Models\MenuModel();
+
+        // Get all menus
+        $data['menus'] = $menuModel->findAll();
+
+        // Load the view
+        return view('menu/menu', $data);
     }
 }
