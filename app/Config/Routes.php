@@ -6,6 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->setAutoRoute(true);
+
+// Public routes
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'About::about');
 $routes->get('menu', 'Menu::index');
@@ -13,8 +15,13 @@ $routes->get('/contact', 'Contact::contact');
 $routes->post('/contact', 'Contact::saveContact'); // Untuk form submission
 $routes->get('/success', 'Contact::success');
 
+// Authentication routes
+$routes->resource('register');
+$routes->resource('login');
+$routes->resource('logout');
 
-$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+// Admin routes - protected by 'auth' middleware
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'auth'], function ($routes) {
     $routes->get('menu', 'Menu::index');
     $routes->get('menu/edit/(:num)', 'Menu::edit/$1');
     $routes->post('menu/update/(:num)', 'Menu::update/$1');
@@ -29,10 +36,3 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
     $routes->post('employee/update/(:num)', 'Employee::update/$1');
     $routes->get('employee/delete/(:num)', 'Employee::delete/$1');
 });
-
-
-
-
-$routes->resource('register');
-$routes->resource('login');
-$routes->resource('logout');

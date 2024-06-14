@@ -27,7 +27,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'authMiddleware' => AuthMiddleware::class // Filter Auth middleware diberi nama authMiddleware
+        'auth'          => AuthMiddleware::class // Filter Auth middleware diberi nama auth
     ];
 
     /**
@@ -69,5 +69,7 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'auth' => ['before' => ['admin/*']],
+    ];    
 }

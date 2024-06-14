@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\AutoloadConfig;
+$autoload['libraries'] = ['session'];
 
 /**
  * -------------------------------------------------------------------
@@ -22,6 +23,7 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 class Autoload extends AutoloadConfig
 {
+
     /**
      * -------------------------------------------------------------------
      * Namespaces
