@@ -31,17 +31,11 @@
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item @@home__active">
-                      <a class="nav-link" href="/">Home</a>
-                  </li>
-                  <li class="nav-item @@about__active">
-                      <a class="nav-link" href="/about">About</a>
-                  </li>
                   <li class="nav-item @@menu__active">
-                      <a class="nav-link" href="/menu">Menu</a>
+                      <a class="nav-link" href="/admin/menu">Menu</a>
                   </li>
                   <li class="nav-item @@contact__active">
-                      <a class="nav-link" href="/contact">Contact</a>
+                      <a class="nav-link" href="/admin/employee">Employee</a>
                   </li>
                   <!--/search-right-->
                   <div class="search-right">
@@ -90,7 +84,7 @@
         </div>
     </div>
 </section>
-<div class="w3l-menublock py-5">bak
+<div class="w3l-menublock py-5">
     <!-- menu block -->
 
  <!-- CRUD Section -->
@@ -151,7 +145,7 @@
         </div>
     </div>
     <!-- End of CRUD Section -->
-    <!-- menu block -->
+    <!-- menu block --> 
 </div>
 <!-- footer -->
 <footer class="py-5">

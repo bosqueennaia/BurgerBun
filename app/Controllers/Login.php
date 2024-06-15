@@ -85,7 +85,7 @@ class Login extends ResourceController
             $this->session->set('name', $user['name']);
             $this->session->set('loggedIn', true);
 
-            return redirect()->to('/home');
+            return redirect()->to('/admin/menu');
         } catch (\Exception $e) {
             return redirect()->to(previous_url());
         }
